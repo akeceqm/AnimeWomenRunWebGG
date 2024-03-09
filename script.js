@@ -1,13 +1,14 @@
 const dino = document.getElementById("dino");
 const kaktus = document.getElementById("kaktus");
 const counts = document.getElementById("count"); 
-const buttonClick = document.getElementById("buttoClick");
+
 
 let count = 0;
 
-buttonClick.addEventListener('click',()=>{
-    count++;
-    counts.innerHTML=count;
+setInterval(function(){{count++}counts.innerHTML=count;},2000);
+
+window.addEventListener('click',()=>{
+
     jump()
 })
 function jump (){
@@ -30,7 +31,7 @@ let isAlive = setInterval(function(){
   let kaktusLeft = parseInt(window.getComputedStyle(kaktus).getPropertyValue("left"));
 
   if (kaktusLeft<50 && kaktusLeft>0 && dinoTop>=140){
-    alert("Game Over!");
+    alert("Ема ты лох!");
     reset();
   }
 },10)
